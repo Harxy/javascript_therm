@@ -1,5 +1,5 @@
 var Thermostat = function(){};
 
-Thermostat.prototype.startTemp = function(number) {
-  return true;
+Thermostat.prototype.temp = function(number) {
+  return 20;
 };

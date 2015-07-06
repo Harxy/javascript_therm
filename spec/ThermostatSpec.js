@@ -6,20 +6,19 @@ describe('Thermostat', function() {
     thermostat = new Thermostat();
   });
 
-  describe('starts at 20 degrees', function() {
-    it('startTemp', function() {
-      expect(thermostat.startTemp(20)).toBe(true);
+  describe('test the starting temperature', function() {
+    it('starts at 20 degrees', function() {
+      expect(thermostat.temp()).toEqual(20);
+    });
+    it('doesn\'t start at 15 degrees', function() {
+      expect(thermostat.temp()).not.toEqual(15);
     });
   });
+  describe('the temp up function', function(){
 
-  describe('starts at 20 degrees', function() {
-    it('startTemp', function() {
-      expect(thermostat.startTemp(19)).toBe(false);
+    it('increase the temperature by 1', function() {
+      thermostat.tempUp()
+      expect(thermostat.temp()).toEqual(21);
     });
   });
-
-  // describe('starts at 20 degrees', function() {
-  //   expect(thermostat.currentTemp).toEqual(20);
-  // });
-
 });
